@@ -17,5 +17,21 @@ Ext.define('LoginApp.view.main.MainController', {
         if (choice === 'yes') {
             //
         }
+    },
+
+    // Function to handle the user logging out of the application
+    // This is done by removing the user from the browser session memory, i.e the Local Storage of the browser
+    onLogoutButtonClick: function () {
+        // Removing the flag from the browser memory which states that the user is logged in
+        // This created the situation that the user is logged in no-more
+        localStorage.removeItem('UserIsLoggedIn');
+
+        // Destroying the current view and it's components for the new/next View to load and display via the Viewport
+        this.getView().destroy();
+
+        // Add the Login Window
+        Ext.create({
+            xtype: 'login_window'
+        });
     }
 });
