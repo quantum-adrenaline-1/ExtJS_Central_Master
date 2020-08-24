@@ -1,0 +1,27 @@
++ The learning stuff is gonna start with the one of the most and required application
+
++ This is the only way to create the Login application.
+
++ The purpose of this application is creating an app with Login/Logout functionality.
+
++ The application is created using the classic toolkit in ExtJS 6.
+
++ As the focus is specifically on the Classic toolkit, so avoided using the Modern or Universal toolkit (providing both the Classic and Modern toolkit).
+
++ The app is ment to design an implementation containing 'Logged in' and 'Logged out' view.
+
++ This application does not attempt to achieve secure data connection, session management, true authentication, etc.
+
+
+			-- ** GENERATING THE APPLICATION ** --
+sencha -skd {path/to/ExtJS_6.2.0_SDK} generate app -classic {application_name} {absolute or relative path of the application}
+
+     << Just replace '-classic' by '-modern' for building app using Modern toolkit >>
+     << Specify neither '-classic' nor '-modern' for building app using Universal toolkit >>
+
+
+
+			-- ** RUNNING THE APPLICATION ** --
+The application can be executed using the console command 'sencha app watch' in the root directory of the application.
+
+Checkout the socket address of the application from the console and navigate to it in the browser to see the application running.
