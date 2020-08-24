@@ -25,3 +25,23 @@ sencha -skd {path/to/ExtJS_6.2.0_SDK} generate app -classic {application_name} {
 The application can be executed using the console command 'sencha app watch' in the root directory of the application.
 
 Checkout the socket address of the application from the console and navigate to it in the browser to see the application running.
+
+
+
++ New folder 'login' was created in the 'view' folder for the View Component Login. This view folder has the View Component module Login.js and View Controller LoginController.js
+
++ The default View class instantiation was commented for the user to first show a view to login as the user won't be logged in initially when the app is executed.
+
++ A window is created to create the login form in Login.js
+
++ Worked on the Login View Component and it's ecosystem such as it's View Controller LoginController.js simulataneously as required.
+
++ The 'launch' life-cycle function of the application in 'Application.js' is implemented to decide the first view to be shown to the user once the application is running based on if the user is logged in the application by checking the flag in the browser Local Storage.
+
++ Plugin viewport is added in the View Component 'Main' with config plugins.
+
++ Adding the Logout logic inside the Main Component View Controller 'MainController' to remove the user logged in flag from the Local Storage of browser and set the Login Component View for the Viewport of the application.
+
++ Adding a Logout button inside the header of the View Component 'Main' in Main.js
+
++ Do not make any typos in the application, becomes very hard to find out as JavaScript does not really help with in-depth or some specific error and simply loads blank screen...too cruel to handle..!
