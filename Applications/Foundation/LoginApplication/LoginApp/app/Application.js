@@ -11,9 +11,20 @@ Ext.define('LoginApp.Application', {
     stores: [
         // TODO: add global / shared stores here
     ],
-    
+
+    // The first function to execute as soon as the application starts running
     launch: function () {
-        // TODO - Launch the application
+        // This variable is used to store the status of user whether Logged In or yet to Login
+        var userAuthenticationStatus;
+
+        // Local Storage of the browser is scanned to check the flag and know if user is logged in or yet to be
+        userAuthenticationStatus = localStorage.getItem('UserIsLoggedIn');
+
+        // The viewport of application is set with xtype of View Component based on the flag in the Local Storage of the browser if the user is logged in
+        // If user is logged in, it will see the 'Main' View Component else it will see the 'Login' View Component to login the application
+        Ext.create({
+            xtype: userAuthenticationStatus? 'app-main' : 'login_window'
+        });
     },
 
     onAppUpdate: function () {
