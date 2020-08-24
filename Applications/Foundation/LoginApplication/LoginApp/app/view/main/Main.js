@@ -10,6 +10,7 @@ Ext.define('LoginApp.view.main.Main', {
     xtype: 'app-main',
 
     requires: [
+        // The Viewport plugin is used to automatically load and instantiate the this 'Main.js' module
         'Ext.plugin.Viewport',
         'Ext.window.MessageBox',
 
@@ -20,6 +21,9 @@ Ext.define('LoginApp.view.main.Main', {
 
     controller: 'main',
     viewModel: 'main',
+
+    // Plugin viewport is added in the Main View Component
+    plugins: 'viewport',
 
     ui: 'navigation',
 
@@ -37,7 +41,16 @@ Ext.define('LoginApp.view.main.Main', {
             },
             flex: 0
         },
-        iconCls: 'fa-th-list'
+        iconCls: 'fa-th-list',
+
+        // Adding Logout button as the View Component child inside it's header
+        items: [{
+            // Here, button config will have xtype as it is the immediate member of 'items' config as provided by Ext JS
+            xtype: 'button',
+            text: 'Logout',
+            margin: '10 0',
+            handler: 'onLogoutButtonClick'
+        }]
     },
 
     tabBar: {
